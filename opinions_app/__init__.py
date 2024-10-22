@@ -6,8 +6,8 @@ from settings import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
-# app.json.ensure_ascii = False
+app.json.ensure_ascii = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from . import cli_commands, error_handlers, views
+from opinions_app import api_views, cli_commands, error_handlers, views
